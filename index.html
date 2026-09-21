@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,18 +17,140 @@
 
     <div class="contenedor">
 
-        <div class="girasol" onclick="iniciar()">
-            🌻
+        <!-- Pantalla inicial -->
+        <div id="inicio">
+
+            <div class="girasol" onclick="iniciar()">
+                🌻
+            </div>
+
+            <div class="texto" id="mensaje">
+                Toca el girasol...
+            </div>
+
         </div>
 
-        <div class="texto" id="mensaje">
-            Toca el girasol...
+
+        <!-- Escena que aparece después -->
+        <div id="historia" class="oculto">
+
+            <div class="flores">
+
+                <span class="flor f1">🌻</span>
+                <span class="flor f2">🌼</span>
+                <span class="flor f3">🌻</span>
+                <span class="flor f4">🌼</span>
+                <span class="flor f5">🌻</span>
+                <span class="flor f6">🌼</span>
+                <span class="flor f7">🌻</span>
+                <span class="flor f8">🌼</span>
+                <span class="flor f9">🌻</span>
+                <span class="flor f10">🌼</span>
+
+            </div>
+
+
+            <div class="contenido">
+
+                <!-- Ramo -->
+                <div class="ramo">
+
+                    <div class="flores-ramo">
+                        🌻🌼🌻
+                    </div>
+
+                    <div class="flores-ramo centro">
+                        🌼🌻🌼🌻🌼
+                    </div>
+
+                    <div class="flores-ramo">
+                        🌻🌼🌻🌼🌻
+                    </div>
+
+                    <div class="tallos">
+                        🌿🌿🌿🌿🌿
+                    </div>
+
+                </div>
+
+
+                <!-- Carta -->
+                <div class="carta">
+
+                    <h1>Para ti</h1>
+
+                    <p>
+                        Quería regalarte flores amarillas,
+                        pero sentí que unas flores no eran
+                        suficientes para decirte todo lo que
+                        llevo dentro.
+                    </p>
+
+                    <p>
+                        Hay cosas que a veces cuesta decir
+                        en una conversación, por eso decidí
+                        escribirlas aquí.
+                    </p>
+
+                    <p>
+                        Te extraño. Y sí, todavía siento
+                        muchísimo por ti. No quiero esconderlo
+                        ni fingir que no importa.
+                    </p>
+
+                    <p>
+                        Gracias por todos los momentos que
+                        compartimos, por las risas, por las
+                        conversaciones y por todo aquello que
+                        hizo especial nuestro camino.
+                    </p>
+
+                    <p>
+                        No hice esto para pedirte una respuesta
+                        ni para presionarte. Solo quería que
+                        supieras que lo que siento por ti es
+                        sincero.
+                    </p>
+
+                    <p>
+                        Ojalá la vida nos permita volver a
+                        encontrarnos con calma, con cariño y
+                        con un corazón más preparado para
+                        cuidarnos.
+                    </p>
+
+                    <p class="final">
+                        Mientras tanto, solo quería dejarte
+                        estas flores...
+                    </p>
+
+                    <div class="frases">
+
+                        <span>“Algunas personas llegan a nuestra vida y dejan flores donde antes no había nada.”</span>
+
+                        <span>“Si alguna vez miras un girasol, recuerda que siempre busca la luz.”</span>
+
+                        <span>“Hay sentimientos que no necesitan ruido para ser verdaderos.”</span>
+
+                    </div>
+
+                    <div class="firma">
+                        Con cariño,<br>
+                        José
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
+
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
+```
