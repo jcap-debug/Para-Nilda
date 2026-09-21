@@ -1,23 +1,26 @@
 ```javascript
 function iniciar() {
 
-    // Ocultar la pantalla inicial
-    const inicio = document.getElementById("inicio");
+    console.log("Girasol presionado");
 
+    const inicio = document.getElementById("inicio");
+    const historia = document.getElementById("historia");
+
+    // Animación de salida
     inicio.style.transition = "opacity 1s ease";
     inicio.style.opacity = "0";
 
-
-    // Después de desaparecer, mostrar la historia
-    setTimeout(() => {
+    // Mostrar la segunda escena
+    setTimeout(function () {
 
         inicio.style.display = "none";
+        historia.classList.remove("oculto");
 
-        const historia = document.getElementById("historia");
-
+        // Aseguramos que sea visible
         historia.style.display = "block";
 
-    }, 1000);
+        console.log("Historia mostrada");
 
+    }, 1000);
 }
 ```
