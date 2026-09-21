@@ -1,3 +1,4 @@
+```css
 * {
     box-sizing: border-box;
 }
@@ -5,32 +6,104 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: #111;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-family: Arial, sans-serif;
     color: white;
     overflow: hidden;
+
+    /* Fondo nocturno romántico */
+    background:
+        radial-gradient(circle at center,
+            #4b3210 0%,
+            #241808 35%,
+            #0d0b08 75%,
+            #050505 100%);
 }
 
+/* Luz suave detrás del girasol */
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.12);
+
+    filter: blur(80px);
+
+    z-index: 0;
+}
+
+/* Contenido */
 .contenedor {
+    position: relative;
+    z-index: 2;
+
     text-align: center;
+
+    animation: aparecer 1.5s ease;
 }
 
+/* Girasol */
 .girasol {
     font-size: 150px;
+
     cursor: pointer;
-    transition: transform 0.4s ease;
     user-select: none;
+
+    display: inline-block;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255, 193, 7, 0.45))
+        drop-shadow(0 0 35px rgba(255, 193, 7, 0.2));
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
 
+/* Cuando pasas el mouse */
 .girasol:hover {
-    transform: scale(1.08);
+    transform: scale(1.08) rotate(-3deg);
+
+    filter:
+        drop-shadow(0 0 20px rgba(255, 193, 7, 0.7))
+        drop-shadow(0 0 50px rgba(255, 193, 7, 0.35));
 }
 
+/* Texto */
 .texto {
-    margin-top: 20px;
+    margin-top: 25px;
+
     font-size: 20px;
+    letter-spacing: 1px;
+
     opacity: 0.9;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3);
+
+    transition: all 0.5s ease;
 }
+
+/* Entrada inicial */
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+```
