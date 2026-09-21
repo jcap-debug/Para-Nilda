@@ -7,93 +7,345 @@ body {
     margin: 0;
     min-height: 100vh;
 
+    background:
+        radial-gradient(circle at center,
+        #4b3210 0%,
+        #241808 35%,
+        #0d0b08 75%,
+        #050505 100%);
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contenedor {
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: Arial, sans-serif;
-    color: white;
-    overflow: hidden;
-
-    /* Fondo nocturno romántico */
-    background:
-        radial-gradient(circle at center,
-            #4b3210 0%,
-            #241808 35%,
-            #0d0b08 75%,
-            #050505 100%);
-}
-
-/* Luz suave detrás del girasol */
-body::before {
-    content: "";
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 193, 7, 0.12);
-
-    filter: blur(80px);
-
-    z-index: 0;
-}
-
-/* Contenido */
-.contenedor {
     position: relative;
-    z-index: 2;
+}
 
+
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
+#inicio {
     text-align: center;
 
     animation: aparecer 1.5s ease;
 }
 
-/* Girasol */
 .girasol {
     font-size: 150px;
 
     cursor: pointer;
+
     user-select: none;
 
     display: inline-block;
 
     filter:
-        drop-shadow(0 0 15px rgba(255, 193, 7, 0.45))
-        drop-shadow(0 0 35px rgba(255, 193, 7, 0.2));
+        drop-shadow(0 0 15px rgba(255, 193, 7, 0.6))
+        drop-shadow(0 0 40px rgba(255, 193, 7, 0.3));
 
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
-/* Cuando pasas el mouse */
 .girasol:hover {
-    transform: scale(1.08) rotate(-3deg);
-
-    filter:
-        drop-shadow(0 0 20px rgba(255, 193, 7, 0.7))
-        drop-shadow(0 0 50px rgba(255, 193, 7, 0.35));
+    transform: scale(1.1) rotate(-4deg);
 }
 
-/* Texto */
 .texto {
     margin-top: 25px;
 
-    font-size: 20px;
+    font-size: 21px;
+
     letter-spacing: 1px;
 
     opacity: 0.9;
 
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.3);
-
-    transition: all 0.5s ease;
+    animation: respirar 2s infinite ease-in-out;
 }
 
-/* Entrada inicial */
+
+/* =========================
+   HISTORIA
+========================= */
+
+.oculto {
+    display: none;
+}
+
+#historia {
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    padding: 60px 30px;
+}
+
+
+/* =========================
+   FLORES QUE APARECEN
+========================= */
+
+.flores {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.flor {
+    position: absolute;
+
+    font-size: 35px;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    animation: crecerFlor 1s forwards;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255, 193, 7, 0.6));
+}
+
+.f1 {
+    top: 8%;
+    left: 8%;
+    animation-delay: 0.3s;
+}
+
+.f2 {
+    top: 18%;
+    right: 10%;
+    animation-delay: 0.6s;
+}
+
+.f3 {
+    top: 45%;
+    left: 4%;
+    animation-delay: 0.9s;
+}
+
+.f4 {
+    top: 70%;
+    right: 8%;
+    animation-delay: 1.2s;
+}
+
+.f5 {
+    bottom: 8%;
+    left: 18%;
+    animation-delay: 1.5s;
+}
+
+.f6 {
+    top: 10%;
+    left: 45%;
+    animation-delay: 1.8s;
+}
+
+.f7 {
+    bottom: 15%;
+    right: 20%;
+    animation-delay: 2.1s;
+}
+
+.f8 {
+    top: 35%;
+    right: 4%;
+    animation-delay: 2.4s;
+}
+
+.f9 {
+    bottom: 5%;
+    left: 45%;
+    animation-delay: 2.7s;
+}
+
+.f10 {
+    top: 55%;
+    left: 12%;
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    animation: subir 1.5s ease 3.2s both;
+}
+
+
+/* =========================
+   RAMO
+========================= */
+
+.ramo {
+    width: 430px;
+
+    text-align: center;
+
+    filter:
+        drop-shadow(0 0 20px rgba(255, 193, 7, 0.35));
+}
+
+.flores-ramo {
+    font-size: 65px;
+
+    letter-spacing: -15px;
+
+    margin-bottom: -5px;
+}
+
+.flores-ramo.centro {
+    font-size: 70px;
+
+    margin-left: -10px;
+}
+
+.tallos {
+    font-size: 70px;
+
+    margin-top: -15px;
+
+    letter-spacing: -15px;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    max-width: 500px;
+
+    padding: 40px;
+
+    background: rgba(20, 14, 5, 0.72);
+
+    border: 1px solid rgba(255, 193, 7, 0.25);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(255, 193, 7, 0.04);
+}
+
+.carta h1 {
+    margin-top: 0;
+
+    font-size: 42px;
+
+    color: #ffd54f;
+
+    text-shadow:
+        0 0 15px rgba(255, 193, 7, 0.35);
+}
+
+.carta p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #f5f5f5;
+
+    margin-bottom: 18px;
+}
+
+.carta .final {
+    color: #ffd54f;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frases {
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.frases span {
+    font-style: italic;
+
+    color: #ffe082;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FIRMA
+========================= */
+
+.firma {
+    margin-top: 35px;
+
+    text-align: right;
+
+    font-size: 21px;
+
+    color: #ffd54f;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
 @keyframes aparecer {
 
     from {
@@ -104,6 +356,102 @@ body::before {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes respirar {
+
+    0%, 100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes crecerFlor {
+
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-30deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes subir {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 800px) {
+
+    #historia {
+        padding: 40px 18px;
+    }
+
+    .contenido {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding-top: 30px;
+    }
+
+    .ramo {
+        width: 100%;
+    }
+
+    .flores-ramo {
+        font-size: 48px;
+    }
+
+    .flores-ramo.centro {
+        font-size: 52px;
+    }
+
+    .tallos {
+        font-size: 55px;
+    }
+
+    .carta {
+        padding: 28px 22px;
+
+        width: 100%;
+    }
+
+    .carta h1 {
+        font-size: 34px;
+    }
+
+    .carta p {
+        font-size: 17px;
+    }
+
+    .girasol {
+        font-size: 120px;
     }
 }
 ```
