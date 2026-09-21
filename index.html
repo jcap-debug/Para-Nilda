@@ -1,12 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Flores Amarillas 🌻</title>
 
@@ -17,21 +15,21 @@
 
     <div class="contenedor">
 
-        <!-- Pantalla inicial -->
+        <!-- PANTALLA INICIAL -->
         <div id="inicio">
 
             <div class="girasol" onclick="iniciar()">
                 🌻
             </div>
 
-            <div class="texto" id="mensaje">
+            <div class="texto">
                 Toca el girasol...
             </div>
 
         </div>
 
 
-        <!-- Escena que aparece después -->
+        <!-- SEGUNDA PANTALLA -->
         <div id="historia" class="oculto">
 
             <div class="flores">
@@ -52,7 +50,7 @@
 
             <div class="contenido">
 
-                <!-- Ramo -->
+                <!-- RAMO -->
                 <div class="ramo">
 
                     <div class="flores-ramo">
@@ -74,7 +72,7 @@
                 </div>
 
 
-                <!-- Carta -->
+                <!-- MENSAJE -->
                 <div class="carta">
 
                     <h1>Para ti</h1>
@@ -94,29 +92,28 @@
 
                     <p>
                         Te extraño. Y sí, todavía siento
-                        muchísimo por ti. No quiero esconderlo
-                        ni fingir que no importa.
+                        muchísimo por ti.
                     </p>
 
                     <p>
                         Gracias por todos los momentos que
-                        compartimos, por las risas, por las
-                        conversaciones y por todo aquello que
-                        hizo especial nuestro camino.
+                        compartimos, por las risas, las
+                        conversaciones y por todo aquello
+                        que hizo especial nuestro camino.
                     </p>
 
                     <p>
                         No hice esto para pedirte una respuesta
                         ni para presionarte. Solo quería que
-                        supieras que lo que siento por ti es
-                        sincero.
+                        supieras que lo que siento por ti
+                        es sincero.
                     </p>
 
                     <p>
                         Ojalá la vida nos permita volver a
-                        encontrarnos con calma, con cariño y
-                        con un corazón más preparado para
-                        cuidarnos.
+                        encontrarnos con calma, con cariño
+                        y con un corazón más preparado
+                        para cuidarnos.
                     </p>
 
                     <p class="final">
@@ -126,11 +123,21 @@
 
                     <div class="frases">
 
-                        <span>“Algunas personas llegan a nuestra vida y dejan flores donde antes no había nada.”</span>
+                        <span>
+                            “Hay personas que dejan una luz
+                            en nuestra vida que el tiempo
+                            no consigue apagar.”
+                        </span>
 
-                        <span>“Si alguna vez miras un girasol, recuerda que siempre busca la luz.”</span>
+                        <span>
+                            “Como los girasoles, algunos
+                            sentimientos siempre buscan la luz.”
+                        </span>
 
-                        <span>“Hay sentimientos que no necesitan ruido para ser verdaderos.”</span>
+                        <span>
+                            “Hay sentimientos que no necesitan
+                            ruido para ser verdaderos.”
+                        </span>
 
                     </div>
 
@@ -148,9 +155,30 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT DIRECTAMENTE AQUÍ -->
+    <script>
+
+        function iniciar() {
+
+            const inicio = document.getElementById("inicio");
+            const historia = document.getElementById("historia");
+
+            // Desaparece la pantalla inicial
+            inicio.style.transition = "opacity 1s ease";
+            inicio.style.opacity = "0";
+
+            // Después aparece la historia
+            setTimeout(function () {
+
+                inicio.style.display = "none";
+
+                historia.classList.remove("oculto");
+
+            }, 1000);
+        }
+
+    </script>
 
 </body>
 
 </html>
-```
